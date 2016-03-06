@@ -6,7 +6,7 @@ set :application,     'omg_capistrano'
 set :user,            'vagrant'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-set(:rails_relative_url_root, '/rails_app')
+set(:rails_relative_url_root, './rails_app')
 
 set :default_env, {
     'PATH' => '/home/vagrant/.nvm/versions/node/v4.3.1/bin:$PATH',
