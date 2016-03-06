@@ -2,11 +2,16 @@
 server 'localhost', port: 2222, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:sebyx07/omg_capistrano.git'
-set :repo_tree,       'relative/path/from/your/repo'
 set :application,     'omg_capistrano'
 set :user,            'vagrant'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+set(:rails_relative_url_root, '/rails_app')
+
+set :default_env, {
+    'PATH' => '/home/vagrant/.nvm/versions/node/v4.3.1/bin:$PATH',
+    'RAILS_RELATIVE_URL_ROOT' => '/rails_app'
+}
 
 # Don't change these unless you know what you're doing
 set :pty,             true
@@ -23,6 +28,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(./.vag
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+set :keep_releases,   2
 
 ## Defaults:
 # set :scm,           :git
