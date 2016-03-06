@@ -10,7 +10,7 @@ set(:rails_relative_url_root, './rails_app')
 
 set :default_env, {
     'PATH' => '/home/vagrant/.nvm/versions/node/v4.3.1/bin:$PATH',
-    'RAILS_RELATIVE_URL_ROOT' => '/rails_app'
+    'RAILS_RELATIVE_URL_ROOT' => './rails_app'
 }
 
 # Don't change these unless you know what you're doing
